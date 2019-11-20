@@ -1,14 +1,15 @@
 package weather;
+
 import java.io.IOException;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
-public class Demo {
+public class ForecasterService {
 
     public void readWeather(String str, ReadFrom read, Consumer<String> print) throws IOException {
 
         WeatherForecast temperature = read.readFrom(str);
-
-      print.accept("Temperature in the chosen city is  " + temperature);
+        print.accept("Temperature in the chosen city is  " + temperature);
 
 
     }

@@ -9,6 +9,7 @@ public class WeatherForecast {
 
     private Weather[] weather;
     private Temperature main;
+    private String name;
 
 
     public WeatherForecast() {
@@ -17,6 +18,7 @@ public class WeatherForecast {
     public WeatherForecast(Weather[] weather, Temperature main) {
         this.weather = weather;
         this.main = main;
+        this.name=name;
     }
 
     public void setWeather(Weather[] weather) {
@@ -27,8 +29,10 @@ public class WeatherForecast {
         this.main = main;
     }
 
+    public  void setName(String name){this.name=name;}
+
     @Override
     public String toString() {
-        return main + "," + Arrays.toString(weather);
+        return main + "," + Arrays.toString(weather) +", city "+name;
     }
 }
