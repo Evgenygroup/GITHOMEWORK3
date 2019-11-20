@@ -2,23 +2,29 @@ package weather;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.Arrays;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Weather {
-    private int id;
+
+
+    private Temperature main;
+    private String name;
+
 
     public Weather() {
     }
-
-    public Weather(int id) {
-        this.id = id;
+    public Weather(Temperature main) {
+        this.main = main;
+    }
+    public void setMain(Temperature main) {
+        this.main = main;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public  void setName(String name){this.name=name;}
 
     @Override
     public String toString() {
-        return "id=" + id;
+        return name + " is "+main;
     }
 }
