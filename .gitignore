@@ -52,6 +52,7 @@ cmake-build-*/
 
 # IntelliJ
 out/
+*.kotlin_module
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -115,6 +116,7 @@ fabric.properties
 *.tar.gz
 *.rar
 *.www
+
 
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
