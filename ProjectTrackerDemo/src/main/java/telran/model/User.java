@@ -1,11 +1,11 @@
 package telran.model;
 
 public class User {
-    String username;
-    String password;
-    String firstName;
-    String lastName;
-    String repeatPassword;
+    private String username;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String repeatPassword;
 
     public User(String username, String password, String firstName, String lastName, String repeatPassword) {
         this.username = username;
