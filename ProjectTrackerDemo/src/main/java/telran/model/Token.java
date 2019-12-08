@@ -1,12 +1,20 @@
 package telran.model;
 
 public class Token {
-    String token;
+    private String token;
 
     public Token() {
     }
 
     public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public Token(String token) {
         this.token = token;
     }
 
