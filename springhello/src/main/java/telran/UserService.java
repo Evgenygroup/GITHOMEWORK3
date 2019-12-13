@@ -21,4 +21,6 @@ public class UserService {
         return  users;
     }
 
+    public void deleteUserById (int id){users.remove(id);}
+
 }

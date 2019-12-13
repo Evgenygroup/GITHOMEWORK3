@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController
 public class UserController {
@@ -31,6 +30,9 @@ public class UserController {
     public List<User> getAllUsers (){
         return userService.getAllUsers();
     }
+
+    @RequestMapping(path="/users/{id}",method = DELETE)
+    public void deleteUserById (@PathVariable int id){userService.deleteUserById(id); }
 
 
 
