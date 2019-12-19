@@ -1,10 +1,7 @@
 package telran;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,7 +19,7 @@ public class UserController {
     }
 
     @RequestMapping(path="/users/{id}",method = GET)
-    public User getUserById (@PathVariable int id){
+    public User getUserById (@PathVariable long id){
         return  userService.getUserById(id);
     }
 
@@ -32,7 +29,12 @@ public class UserController {
     }
 
     @RequestMapping(path="/users/{id}",method = DELETE)
-    public void deleteUserById (@PathVariable int id){userService.deleteUserById(id); }
+    public void deleteUserById (@PathVariable long id){userService.deleteUserById(id); }
+
+    @RequestMapping (path = "/users/search",method = GET)
+    public  User findByName(@RequestParam(name="first_name") String firstName){
+      return   userService.findByFirstName(firstName);
+    }
 
 
 

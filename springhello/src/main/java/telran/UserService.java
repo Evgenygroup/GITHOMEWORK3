@@ -1,5 +1,6 @@
 package telran;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -7,20 +8,23 @@ import java.util.List;
 
 @Component
 public class UserService {
-    private List<User> users=new ArrayList<>();
+    @Autowired
+    private UserRepository repository;
 
     public  void  addUser(User user){
-        users.add(user);
+        repository.save(user);
     }
 
-    public User getUserById (int id){
-        return  users.get(id);
+    public User getUserById (Long id){
+        return  repository.findById(id).get();
     }
 
     public  List<User>getAllUsers(){
-        return  users;
+        return  repository.findAll();
     }
 
-    public void deleteUserById (int id){users.remove(id);}
+    public void deleteUserById (Long id){repository.deleteById(id);}
+
+    public  User findByFirstName (String name){return  repository.findByFirstName(name);}
 
 }
